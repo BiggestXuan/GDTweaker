@@ -9,4 +9,4 @@
 <recipetype:gaiadimension:restructuring>.removeRecipeByName("gaiadimension:restructuring/proustite");
 ```
 ### 相信这些代码大家能看懂吧，反正小编是看不懂的，但是小编感到非常惊讶。  
-### 这个模组是1.12.2哦，大家不要用错了，这就是今天的大轩看世界了，大家有什么想法欢迎在评论区告诉小编哦。
+### 这个模组是1.16.5哦，大家不要用错了，这就是今天的大轩看世界了，大家有什么想法欢迎在评论区告诉小编哦。
