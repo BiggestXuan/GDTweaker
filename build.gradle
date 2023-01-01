@@ -62,7 +62,6 @@ dependencies {
     minecraft 'net.minecraftforge:forge:1.12.2-14.23.5.2859'
     implementation files('lib/CraftTweaker2-1.12-4.1.20.682.jar')
     implementation files('lib/gaiadimension-1.12.2-1.0.5.jar')
-    implementation files('lib/MTLib-3.0.7.jar')
 
     // You may put jars on which you depend on in ./libs or you may define them like so..
     // compile "some.group:artifact:version:classifier"

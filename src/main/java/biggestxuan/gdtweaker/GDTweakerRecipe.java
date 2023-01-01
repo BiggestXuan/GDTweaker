@@ -1,7 +1,6 @@
 package biggestxuan.gdtweaker;
 
 import androsa.gaiadimension.recipe.RecipeHandler;
-import com.blamejared.mtlib.helpers.InputHelper;
 import crafttweaker.CraftTweakerAPI;
 import crafttweaker.annotations.ZenRegister;
 import crafttweaker.api.item.IItemStack;
@@ -14,11 +13,11 @@ import stanhebben.zenscript.annotations.ZenMethod;
 public class GDTweakerRecipe {
     @ZenMethod
     public static void addPurifyRecipe(IItemStack input, IItemStack output1, IItemStack output2, float xp) {
-        RecipeHandler.addPurifying(InputHelper.toStack(input),InputHelper.toStack(output1),InputHelper.toStack(output2),xp);
+        RecipeHandler.addPurifying(CraftTweakerMC.getItemStack(input),CraftTweakerMC.getItemStack(output1),CraftTweakerMC.getItemStack(output2),xp);
     }
     @ZenMethod
     public static void addGlitterRecipe(IItemStack input, IItemStack output1, IItemStack output2, float xp){
-        RecipeHandler.addGlitterRefactoring(InputHelper.toStack(input),InputHelper.toStack(output1),InputHelper.toStack(output2),xp);
+        RecipeHandler.addGlitterRefactoring(CraftTweakerMC.getItemStack(input),CraftTweakerMC.getItemStack(output1),CraftTweakerMC.getItemStack(output2),xp);
     }
     @ZenMethod
     public static void removePurifyRecipe(IItemStack input){
