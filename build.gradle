@@ -1,10 +1,12 @@
 buildscript {
     repositories {
         maven { url = 'https://maven.minecraftforge.net/' }
+        maven { url = 'https://repo.spongepowered.org/maven' }
         mavenCentral()
     }
     dependencies {
         classpath 'net.minecraftforge.gradle:ForgeGradle:3.+'
+        classpath 'org.spongepowered:mixingradle:0.7-SNAPSHOT'
     }
 }
         
@@ -12,8 +14,9 @@ apply plugin: 'net.minecraftforge.gradle'
 // Only edit below this line, the above code adds and enables the necessary things for Forge to be setup.
 apply plugin: 'eclipse'
 apply plugin: 'maven-publish'
+apply plugin: 'org.spongepowered.mixin'
 
-version = '1.0'
+version = '1.0 - fix'
 group = 'biggestxuan.gdtweaker' // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = 'gdtweaker'
 
@@ -62,6 +65,13 @@ dependencies {
     minecraft 'net.minecraftforge:forge:1.12.2-14.23.5.2859'
     implementation files('lib/CraftTweaker2-1.12-4.1.20.682.jar')
     implementation files('lib/gaiadimension-1.12.2-1.0.5.jar')
+    implementation files('lib/mixinbooter-4.2.jar')
+
+    compile('org.spongepowered:mixin:0.8.3-SNAPSHOT') {
+        exclude module: 'guava'
+        exclude module: 'commons-io'
+        exclude module: 'gson'
+    }
 
     // You may put jars on which you depend on in ./libs or you may define them like so..
     // compile "some.group:artifact:version:classifier"
@@ -81,6 +91,14 @@ dependencies {
     // http://www.gradle.org/docs/current/userguide/artifact_dependencies_tutorial.html
     // http://www.gradle.org/docs/current/userguide/dependency_management.html
 
+}
+
+mixin {
+    add sourceSets.main, "mixins.gdtweaker.refmap.json"
+}
+
+repositories {
+    maven { url = "https://repo.spongepowered.org/maven" }
 }
 
 // Example for how to get properties into the manifest for reading by the runtime..
